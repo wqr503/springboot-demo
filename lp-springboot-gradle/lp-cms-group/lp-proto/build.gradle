@@ -1,0 +1,73 @@
+group 'wqr'
+version '0.0.1-SNAPSHOT'
+
+buildscript {
+//    repositories {
+////        mavenLocal()
+////        maven { url mavenURL }
+////        mavenCentral()
+////    }
+    dependencies {
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.8'
+    }
+}
+
+apply plugin: 'com.google.protobuf'
+
+
+dependencies {
+    implementation allDependsMap.'grpc-protobuf'
+    implementation allDependsMap.'grpc-stub'
+    //通过implementation依赖的库只能自己库本身访问，举个例子，A依赖B，B依赖C，如果B依赖C是使用的implementation依赖，那么在A中是访问不到C中的方法的，如果需要访问
+    implementation allDependsMap.'grpc-netty-shaded'
+
+    // 解决重复依赖
+    compileOnly allDependsMap.'javax.annotation-api'
+
+    // examples/advanced need this for JsonFormat
+//    implementation "com.google.protobuf:protobuf-java-util:${protobufVersion}"
+
+
+//    testImplementation "io.grpc:grpc-testing:${grpcVersion}"
+//    testImplementation "junit:junit:4.12"
+//    testImplementation "org.mockito:mockito-core:2.25.1"
+}
+
+sourceSets {
+    main {
+        java {
+            // 定义source目录
+            srcDir 'build/generated/source/proto/main/java'
+        }
+    }
+}
+
+protobuf {
+    protoc {
+        artifact = "com.google.protobuf:protoc:${vers.protobuf}"
+    }
+    
+    plugins {
+        grpc {
+            artifact = "io.grpc:protoc-gen-grpc-java:${vers.grpc}"
+        }
+    }
+
+//    generatedFilesBaseDir = "src"
+
+    generateProtoTasks {
+        all()*.plugins {
+            grpc {
+                outputSubDir = "java"
+            }
+        }
+    }
+}
+
+idea {
+    module {
+        // 定义IDEA 编译 source路径
+        sourceDirs += file("build/generated/source/proto/main/java")
+        sourceDirs += file("src/main/proto")
+    }
+}

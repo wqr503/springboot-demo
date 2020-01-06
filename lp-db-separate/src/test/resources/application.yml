@@ -1,0 +1,25 @@
+#端口号
+server:
+  port: 8283
+#数据库连接
+spring:
+  shardingsphere:
+    datasource:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:13306/wqr?serverTimezone=GMT&useSSL=false&allowPublicKeyRetrieval=true
+      username: root
+      password: 123456
+    sharding:
+      scan:
+        basePack: com.cn.lp.test.share
+      showSQL: true
+  jpa:
+    database: MYSQL
+    show-sql: true
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+
+
+

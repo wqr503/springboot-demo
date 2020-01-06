@@ -1,0 +1,9 @@
+shiro:
+  login:
+    token:
+      expireTime: 300000
+    password:
+      expireTime: 300000
+  filterChains:
+logging:
+  config: classpath:logback-boot.xml

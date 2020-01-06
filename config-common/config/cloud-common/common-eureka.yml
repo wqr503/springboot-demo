@@ -1,0 +1,28 @@
+# eureka 配置
+eureka:
+  instance:
+    # 续租间隔(秒)
+    lease-renewal-interval-in-seconds: 10
+    # 租期(秒)
+    lease-expiration-duration-in-seconds: 30
+    # 此时就可以看到如果设置eureka.instance.prefer-ip-address为false时，那么注册到Eureka中的Ip地址就是本机的Ip地址。
+    # 如果设置了true并且也设置了eureka.instance.ip-address那么就将此ip地址注册到Eureka中
+    prefer-ip-address: true
+    status-page-url-path: /actuator/info
+    health-check-url-path: /actuator/health
+    #版本号
+    instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+    metadata-map:
+      management:
+        context-path: ${server.servlet.context-path}/actuator
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    # 获取注册表间隔
+    registry-fetch-interval-seconds: 8
+    service-url:
+      defaultZone: ${user.eureka.default-zone}
+    healthcheck:
+      #设为true，开启健康检查（需要sping-boot-start-actuator依赖）
+      enabled: true
+

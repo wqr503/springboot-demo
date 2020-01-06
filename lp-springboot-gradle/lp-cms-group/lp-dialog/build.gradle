@@ -1,0 +1,54 @@
+import javax.swing.JOptionPane
+
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'groovy'
+
+dependencies {
+    compile allDependsMap.'freemarker'
+    compile bootDepends
+    compile allDependsMap.'commons-lang3'
+//    compile project("${subProjectPaths.commonBase}")
+    testImplementation bootTestDepends
+    compile localGroovy()
+}
+
+bootJar {
+    enabled = false
+}
+
+jar {
+    enabled = true
+}
+
+//java中定义了2个sourceset：一个是main group，还有一个是test group。
+//
+//main：项目中的源文件，编译后组装到jar包中的。
+//
+//test：项目的测试源码，例如JUint和TestNG写的测试代码。
+
+// 执行groovy
+task exportEnumClass(group: 'export', type: JavaExec) {
+    String message = project.group+'.'+project.name
+    main = 'com.ly.tools.template.GroovyTest'
+    // sourceSets 是java插件中的参数
+    classpath = sourceSets.main.runtimeClasspath
+    args 'com','tool'
+}
+
+// ui 界面
+task tt(group: 'export') {
+    doLast{
+        Object[] values = ['qq','tt']
+//            def developer = showInputDialog(null, "请选择开发人员", "选择开发人员", JOptionPane.INFORMATION_MESSAGE, null, values, values[0])
+        def developer = showInputDialog()
+        println(sourceSets.main.runtimeClasspath)
+        println(developer)
+    }
+}
+
+def String showInputDialog() {
+    println 'showInputDialog'
+    String inputValue = JOptionPane.showInputDialog("Please input a value")
+    return inputValue;
+}

@@ -1,0 +1,91 @@
+java.io.FileNotFoundException:  does not exist.
+	at freemarker.cache.FileTemplateLoader$1.run(FileTemplateLoader.java:122)
+	at freemarker.cache.FileTemplateLoader$1.run(FileTemplateLoader.java:119)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at freemarker.cache.FileTemplateLoader.<init>(FileTemplateLoader.java:119)
+	at freemarker.cache.FileTemplateLoader.<init>(FileTemplateLoader.java:98)
+	at freemarker.template.Configuration.setDirectoryForTemplateLoading(Configuration.java:1539)
+	at com.cn.lp.ConfigFileUtil.dealConfigFile(ConfigFileUtil.java:72)
+	at com.cn.lp.ConfigFileUtil.dealConfigDir(ConfigFileUtil.java:41)
+	at com.cn.lp.cmd.TemplateCmd.main(TemplateCmd.java:54)
+java.io.FileNotFoundException:  does not exist.
+	at freemarker.cache.FileTemplateLoader$1.run(FileTemplateLoader.java:122)
+	at freemarker.cache.FileTemplateLoader$1.run(FileTemplateLoader.java:119)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at freemarker.cache.FileTemplateLoader.<init>(FileTemplateLoader.java:119)
+	at freemarker.cache.FileTemplateLoader.<init>(FileTemplateLoader.java:98)
+	at freemarker.template.Configuration.setDirectoryForTemplateLoading(Configuration.java:1539)
+	at com.cn.lp.ConfigFileUtil.dealConfigFile(ConfigFileUtil.java:72)
+	at com.cn.lp.ConfigFileUtil.dealConfigDir(ConfigFileUtil.java:41)
+	at com.cn.lp.cmd.TemplateCmd.main(TemplateCmd.java:54)
+freemarker.template.TemplateNotFoundException: Template not found for name "C:\\workspace\\source\\workspace\\lp-demo\\lp-freemark\\src\\main\\resources/../../../mvl/zhp-model_0.1.0/vo.mvl" (normalized: "mvl/zhp-model_0.1.0/vo.mvl").
+The name was interpreted by this TemplateLoader: FileTemplateLoader(baseDir="C:\workspace\source\workspace\lp-demo\lp-freemark", canonicalBasePath="C:\workspace\source\workspace\lp-demo\lp-freemark\").
+Warning: The name contains backslash ("\") instead of slash ("/"); template names should use slash only.
+	at freemarker.template.Configuration.getTemplate(Configuration.java:2797)
+	at freemarker.template.Configuration.getTemplate(Configuration.java:2599)
+	at com.cn.lp.ConfigFileUtil.dealConfigFile(ConfigFileUtil.java:79)
+	at com.cn.lp.ConfigFileUtil.dealConfigDir(ConfigFileUtil.java:41)
+	at com.cn.lp.cmd.TemplateCmd.main(TemplateCmd.java:54)
+freemarker.template.TemplateNotFoundException: Template not found for name "C:\\workspace\\source\\workspace\\lp-demo\\lp-freemark\\src\\main\\resources/../../../mvl/zhp-model_0.1.0/vo.mvl" (normalized: "mvl/zhp-model_0.1.0/vo.mvl").
+The name was interpreted by this TemplateLoader: FileTemplateLoader(baseDir="C:\workspace\source\workspace\lp-demo\lp-freemark", canonicalBasePath="C:\workspace\source\workspace\lp-demo\lp-freemark\").
+Warning: The name contains backslash ("\") instead of slash ("/"); template names should use slash only.
+	at freemarker.template.Configuration.getTemplate(Configuration.java:2797)
+	at freemarker.template.Configuration.getTemplate(Configuration.java:2599)
+	at com.cn.lp.ConfigFileUtil.dealConfigFile(ConfigFileUtil.java:79)
+	at com.cn.lp.ConfigFileUtil.dealConfigDir(ConfigFileUtil.java:41)
+	at com.cn.lp.cmd.TemplateCmd.main(TemplateCmd.java:54)
+freemarker.template.TemplateNotFoundException: Template not found for name "/../../../mvl/zhp-model_0.1.0/vo.mvl".
+Reason given: Backing out from the root directory is not allowed.
+The name was interpreted by this TemplateLoader: FileTemplateLoader(baseDir="C:\workspace\source\workspace\lp-demo\lp-freemark\src\main\resources", canonicalBasePath="C:\workspace\source\workspace\lp-demo\lp-freemark\src\main\resources\").
+	at freemarker.template.Configuration.getTemplate(Configuration.java:2797)
+	at freemarker.template.Configuration.getTemplate(Configuration.java:2599)
+	at com.cn.lp.ConfigFileUtil.dealConfigFile(ConfigFileUtil.java:76)
+	at com.cn.lp.ConfigFileUtil.dealConfigDir(ConfigFileUtil.java:41)
+	at com.cn.lp.cmd.TemplateCmd.main(TemplateCmd.java:54)
+freemarker.template.TemplateNotFoundException: Template not found for name "/../../../mvl/zhp-model_0.1.0/vo.mvl".
+Reason given: Backing out from the root directory is not allowed.
+The name was interpreted by this TemplateLoader: FileTemplateLoader(baseDir="C:\workspace\source\workspace\lp-demo\lp-freemark\src\main\resources", canonicalBasePath="C:\workspace\source\workspace\lp-demo\lp-freemark\src\main\resources\").
+	at freemarker.template.Configuration.getTemplate(Configuration.java:2797)
+	at freemarker.template.Configuration.getTemplate(Configuration.java:2599)
+	at com.cn.lp.ConfigFileUtil.dealConfigFile(ConfigFileUtil.java:76)
+	at com.cn.lp.ConfigFileUtil.dealConfigDir(ConfigFileUtil.java:41)
+	at com.cn.lp.cmd.TemplateCmd.main(TemplateCmd.java:54)
+freemarker.template.TemplateNotFoundException: Template not found for name "/../test.ftl".
+Reason given: Backing out from the root directory is not allowed.
+The name was interpreted by this TemplateLoader: FileTemplateLoader(baseDir="C:\workspace\source\workspace\lp-demo\lp-freemark\src\main\resources", canonicalBasePath="C:\workspace\source\workspace\lp-demo\lp-freemark\src\main\resources\").
+	at freemarker.template.Configuration.getTemplate(Configuration.java:2797)
+	at freemarker.template.Configuration.getTemplate(Configuration.java:2599)
+	at com.cn.lp.ConfigFileUtil.dealConfigFile(ConfigFileUtil.java:76)
+	at com.cn.lp.ConfigFileUtil.dealConfigDir(ConfigFileUtil.java:41)
+	at com.cn.lp.cmd.TemplateCmd.main(TemplateCmd.java:54)
+java.io.FileNotFoundException: C:\workspace\source\workspace\lp-demo\lp-freemark\src\main\resources\src\C_DepositOrderDTO.java (系统找不到指定的路径。)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:298)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:237)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:187)
+	at com.cn.lp.ConfigFileUtil.dealConfigFile(ConfigFileUtil.java:77)
+	at com.cn.lp.ConfigFileUtil.dealConfigDir(ConfigFileUtil.java:41)
+	at com.cn.lp.cmd.TemplateCmd.main(TemplateCmd.java:54)
+freemarker.template.TemplateNotFoundException: Template not found for name "../test.ftl".
+Reason given: Backing out from the root directory is not allowed.
+The name was interpreted by this TemplateLoader: FileTemplateLoader(baseDir="C:\workspace\source\workspace\lp-demo\lp-freemark\src\main\resources", canonicalBasePath="C:\workspace\source\workspace\lp-demo\lp-freemark\src\main\resources\").
+	at freemarker.template.Configuration.getTemplate(Configuration.java:2797)
+	at freemarker.template.Configuration.getTemplate(Configuration.java:2599)
+	at com.cn.lp.ConfigFileUtil.dealConfigFile(ConfigFileUtil.java:76)
+	at com.cn.lp.ConfigFileUtil.dealConfigDir(ConfigFileUtil.java:41)
+	at com.cn.lp.cmd.TemplateCmd.main(TemplateCmd.java:54)
+freemarker.template.TemplateNotFoundException: Template not found for name "test.ftl".
+The name was interpreted by this TemplateLoader: FileTemplateLoader(baseDir="C:\workspace\source\workspace\lp-demo\lp-freemark\src\main\resources", canonicalBasePath="C:\workspace\source\workspace\lp-demo\lp-freemark\src\main\resources\").
+	at freemarker.template.Configuration.getTemplate(Configuration.java:2797)
+	at freemarker.template.Configuration.getTemplate(Configuration.java:2599)
+	at com.cn.lp.ConfigFileUtil.dealConfigFile(ConfigFileUtil.java:76)
+	at com.cn.lp.ConfigFileUtil.dealConfigDir(ConfigFileUtil.java:41)
+	at com.cn.lp.cmd.TemplateCmd.main(TemplateCmd.java:54)
+java.io.FileNotFoundException: C:\workspace\source\workspace\lp-demo\lp-freemark\src\main\resources..\C_DepositOrderDTO.java (系统找不到指定的路径。)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:298)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:237)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:187)
+	at com.cn.lp.ConfigFileUtil.dealConfigFile(ConfigFileUtil.java:77)
+	at com.cn.lp.ConfigFileUtil.dealConfigDir(ConfigFileUtil.java:41)
+	at com.cn.lp.cmd.TemplateCmd.main(TemplateCmd.java:54)

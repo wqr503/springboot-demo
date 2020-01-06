@@ -1,0 +1,69 @@
+group 'wqr'
+version '0.0.1-SNAPSHOT'
+
+// 定义非springboot 项目
+def noBootJavaProjectNames = [
+        'lp-proto',
+        'lp-dialog'
+]
+
+subprojects {
+
+    // project.name 获取子项目名字
+    // project.group 获取子项目group
+    String name = project.name
+
+    //使用这个插件可以让减少项目的改动。而且，会检测其他插件的使用或者更新。比如，当应用了java插件，会自动在构建时打包成可执行的jar。
+    apply plugin: 'org.springframework.boot'
+
+    //允许你在声明依赖的时候忽略掉版本号，使用这项功能，只需要正常的声明依赖，不用写版本号就可以了
+    apply plugin: 'io.spring.dependency-management'
+
+    // 定义项目依赖
+    dependencies {
+        // 定义在config.gradle中
+        compile commonDepends
+        compile bootDepends
+        testImplementation bootTestDepends
+    }
+
+    // 引入spring-cloud 依赖
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${vers.springCloud}"
+        }
+    }
+
+    // 排除不是springboot项目
+    if (noBootJavaProjectNames.contains(project.name)) {
+
+        // 取消springboot 打包过程
+        bootJar {
+            // springboot 打包过程， 需要Main函数
+            enabled = false
+        }
+
+        // 执行阶段
+        jar {
+            // 普通jar包，不需要main函数
+            // 是否禁止阶段
+            enabled = true
+        }
+
+    } else {
+        bootJar {
+            // springboot 打包过程， 需要Main函数
+            enabled = true
+        }
+
+        // 执行阶段
+        jar {
+            // 普通jar包，不需要main函数
+            // 是否禁止阶段
+            enabled = false
+        }
+    }
+
+
+}
+

@@ -1,0 +1,69 @@
+syntax = "proto3";
+
+import "common-mo.proto";
+import "casino-game-manager-mo.proto";
+
+option java_multiple_files = true;
+option java_package = "com.ly.zhp.biz.protocol.grpc.casinogamemanager";
+option java_outer_classname = "CasinoGameManagerServiceProto";
+
+// 娱乐城用户服务
+service CasinoGame {
+
+    // 获得所有游戏
+    rpc searchGame (GameSearchingMO) returns (SearchGameResultMO) {
+
+    }
+
+    // 维护
+    rpc maintain (LongMO) returns (SimpleResultMO) {
+
+    }
+
+    // 结束维护
+    rpc endMaintain (LongMO) returns (SimpleResultMO) {
+
+    }
+
+    // 更新维护开始时间
+    rpc updateMaintainStarTime (UpdateMaintainTimeMO) returns (SimpleResultMO) {
+
+    }
+
+    // 更新维护结束时间
+    rpc updateMaintainEndTime (UpdateMaintainTimeMO) returns (SimpleResultMO) {
+
+    }
+
+    // 添加备注
+    rpc addRemark (AddGameRemarkMO) returns (SimpleResultMO) {
+
+    }
+
+    // 取消维护结束时间
+    rpc cancelMaintainEndTime (LongMO) returns (SimpleResultMO) {
+
+    }
+
+    // 取消维护开始时间
+    rpc cancelMaintainStarTime (LongMO) returns (SimpleResultMO) {
+
+    }
+
+    // 添加游戏
+    rpc addGame (CasinoGameMO) returns (SimpleResultMO) {
+
+    }
+
+    // 删除游戏
+    rpc delGame (LongMO) returns (SimpleResultMO) {
+
+    }
+
+    // 修改游戏
+    rpc modifyGame (CasinoGameMO) returns (SimpleResultMO) {
+
+    }
+
+}
+

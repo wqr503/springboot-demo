@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+import "common-mo.proto";
+import "casino-notice-manager-mo.proto";
+
+option java_multiple_files = true;
+option java_package = "com.ly.zhp.biz.protocol.grpc.casinonoticemanager";
+option java_outer_classname = "CasinoNoticeManagerServiceProto";
+
+// 娱乐城用户服务
+service CasinoNotice {
+
+    // 获取公告
+    rpc getAllNotice (NoticeSearchingMO) returns (SearchNoticeResultMO) {
+
+    }
+
+    // 删除公告
+    rpc deleteNotice (LongMO) returns (SimpleResultMO) {
+
+
+    }
+
+    // 添加公告
+    rpc addNotice (CasinoNoticeMO) returns (SimpleResultMO) {
+
+    }
+
+}

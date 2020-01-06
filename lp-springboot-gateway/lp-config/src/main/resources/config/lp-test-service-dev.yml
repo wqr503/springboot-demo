@@ -1,0 +1,24 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8013/eureka
+  instance:
+    prefer-ip-address: true
+    status-page-url-path: ${server.servlet.context-path}/actuator/info
+    health-check-url-path: ${server.servlet.context-path}/actuator/health
+    # 显示版本号
+    instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+    metadata-map:
+      management:
+        # 上传上下文到eureka
+        context-path: ${server.servlet.context-path}/actuator
+
+management:
+  endpoints:
+    web:
+      #      由于 Spring Boot 2.0 的 Actuator 只暴露了 /health、/info 两个端口（为了安全考虑）, 所以需要配置暴露的接口
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS

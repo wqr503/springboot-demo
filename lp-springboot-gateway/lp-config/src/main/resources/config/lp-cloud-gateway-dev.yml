@@ -1,0 +1,55 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8013/eureka
+    #设为true，开启健康检查（需要sping-boot-start-actuator依赖）
+    healthcheck:
+      enabled: true
+  instance:
+    #使用ip替代实例名
+    prefer-ip-address: true
+
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          # 路由时使用小写服务名
+          lower-case-service-id: true
+          # 启用通过服务发现的路由
+          enabled: true
+
+      #配置路由
+      routes:
+
+        - id: service
+          #eureka上的服务名
+          uri: lb://LP-TEST-SERVICE
+          predicates:
+            - Path=/test/**
+            - Weight=group1, 0
+          filters:
+            # 去掉/qa/ 比如访问url是/qa/test 经过gateway后，后面服务拿到的就只有/test
+            - StripPrefix=1
+        - id: service-1
+          #eureka上的服务名
+          uri: lb://LP-TEST-SERVICE-1
+          predicates:
+            - Path=/test/**
+            - Weight=group1, 5
+          filters:
+            # 去掉/qa/ 比如访问url是/qa/test 经过gateway后，后面服务拿到的就只有/test
+            - StripPrefix=1
+      # 设置默认过滤器，设置域名过滤器为默认过滤
+      default-filters:
+        - RealmName
+
+management:
+  endpoints:
+    web:
+      #      由于 Spring Boot 2.0 的 Actuator 只暴露了 /health、/info 两个端口（为了安全考虑）, 所以需要配置暴露的接口
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS

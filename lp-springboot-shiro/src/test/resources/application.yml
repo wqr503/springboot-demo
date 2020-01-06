@@ -1,0 +1,17 @@
+shiro:
+  session:
+#    session 超时
+    outTime: 300000
+  login:
+    token:
+#      令牌有效时间
+      expireTime: 300000
+    password:
+#      密码有效时间
+      expireTime: 300000
+#  过滤链
+  filterChains:
+    - /**
+    - anon
+logging:
+  config: classpath:logback-boot.xml

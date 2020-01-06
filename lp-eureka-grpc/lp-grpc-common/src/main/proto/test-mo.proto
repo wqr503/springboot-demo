@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.cn.lp.common.rpc.model";
+option java_outer_classname = "TestModelProto";
+
+// The request message containing the user's name.
+message HelloRequestMO {
+    string name = 1;
+}
+
+// The response message containing the greetings
+message HelloReplyMO {
+    string message = 1;
+}

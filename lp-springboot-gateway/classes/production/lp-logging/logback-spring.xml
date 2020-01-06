@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appender name="console_color_short" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder charset="${log.charset}">
+            <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度 %msg：日志消息，%n是换行符-->
+            <pattern>%d{yyyyMMdd:HH:mm:ss.SSS} [%thread] %-5level  %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 测试环境+开发环境. 多个使用逗号隔开. -->
+    <springProfile name="default">
+        <!-- 日志输出级别 -->
+        <root level="WARN">
+            <appender-ref ref="console_color_short"/>
+        </root>
+    </springProfile>
+
+</configuration>

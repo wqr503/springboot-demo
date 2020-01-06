@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+import "common-mo.proto";
+import "casino-mo.proto";
+
+option java_multiple_files = true;
+option java_package = "com.ly.zhp.biz.protocol.grpc.casino";
+option java_outer_classname = "CasinoServiceProto";
+
+// 娱乐城用户服务
+service CasinoUser {
+
+    // 管理员注册
+    rpc adminRegister (UserRegisterMO) returns (SimpleResultMO) {
+
+    }
+
+    // 获取注册表格配置
+    rpc getInfoFormConfig (InfoFormTypeMO) returns (InfoFormConfigMO) {
+
+    }
+
+    // 编辑表格信息配置
+    rpc editInfoFormConfig (InfoFormConfigMO) returns (SimpleResultMO) {
+
+    }
+
+}
+
+//娱乐城代理服务
+service CasinoAgency {
+
+    // 搜索代理直属用户
+    rpc searchAgentDirectUsers(CasinoAgentUserSearchingMO) returns (CasinoAgentUserPageMO) {
+
+    }
+
+    // 搜索代理下辖用户
+    rpc searchAgentUsers(CasinoAgentUserSearchingMO) returns (CasinoAgentUserPageMO) {
+
+    }
+
+    // 获取下级代理推广信息
+    rpc searchNextLowerAgentPromotions(CasinoLowerAgentPromotionSearchingMO) returns (CasinoAgentPromotionPageMO) {
+    }
+
+    // 获取下辖代理推广信息
+    rpc searchLowerAgentPromotions(CasinoLowerAgentPromotionSearchingMO) returns (CasinoAgentPromotionPageMO) {
+    }
+
+    // 获取推广信息
+    rpc getPromotion(NoneMO) returns (CasinoPromotionMO) {
+    }
+}

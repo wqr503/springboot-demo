@@ -1,0 +1,14 @@
+server:
+  servlet:
+    context-path:
+  port: 8020
+
+spring:
+  servlet:
+    multipart:
+      max-request-size: 10MB
+      max-file-size: 10MB
+  mvc: # 定位页面的目录到static/下
+    view:
+      prefix: /
+      suffix: .html

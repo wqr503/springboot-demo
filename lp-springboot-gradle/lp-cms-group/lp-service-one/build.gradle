@@ -1,0 +1,80 @@
+group 'wqr'
+version '0.0.1-SNAPSHOT'
+
+// 定义项目依赖
+dependencies {
+    // 定义在config.gradle中
+    compile allDependsMap.'mysql-connector-java'
+    compile project(":lp-cms-group:lp-proto")
+}
+
+// 清除现有的lib目录
+task clearJar(type: Delete) {
+    delete "$buildDir\\libs\\lib"
+}
+
+// 将依赖包复制到lib目录
+task copyJar(type: Copy, dependsOn: 'clearJar') {
+    // 复制文件
+    from configurations.runtimeClasspath
+    // 若文件夹不存在会自己创建
+    into "$buildDir/libs/lib"
+
+    include { details ->
+        String name = details.file.name
+        return isExcludedJar(name)
+    }
+}
+
+bootJar {
+
+    // 例外所有的jar
+//    excludes = ["*.jar"]
+
+    exclude { details ->
+        String name = details.file.name
+        return isExcludedJar(name)
+    }
+
+    exclude { details ->
+        String name = details.file.name
+        if (!name.endsWith(".jar")) {
+            return false
+        }
+        if (details.file.name.contains("lp")) {
+            return false
+        }
+        return true
+    }
+
+    // lib目录的清除和复制任务
+    dependsOn clearJar
+    dependsOn copyJar
+
+    // 指定依赖包的路径
+    manifest {
+
+        def jars = configurations
+                .getByName("runtimeClasspath")
+                .filter({ File f ->
+                    return isExcludedJar(f.name)
+                })
+                .files
+                .collect { "./lib/$it.name" }
+                .join(' ')
+
+        println(" > 外部jar: " + jars)
+        attributes "Manifest-Version": 1.0, 'Class-Path': jars
+    }
+
+}
+
+def isExcludedJar(String jarName) {
+    if (!jarName.endsWith(".jar")) {
+        return false
+    }
+    if (jarName.startsWith("lp-")) {
+        return false
+    }
+    return true
+}

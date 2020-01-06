@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+import "test-mo.proto";
+
+option java_multiple_files = true;
+option java_package = "com.cn.lp.common.rpc";
+option java_outer_classname = "TestServiceProto";
+
+// The greeting service definition.
+service Test {
+
+    // Sends a greeting
+    rpc SayHello (HelloRequestMO) returns (HelloReplyMO) {
+    }
+
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/../lp-db-separate" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../lp-elasticsearch-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../lp-eureka-grpc/lp-eureka" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../lp-eureka-grpc/lp-grpc-client" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../lp-eureka-grpc/lp-grpc-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../lp-eureka-grpc/lp-grpc-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../lp-google-token" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../lp-mongo-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../lp-redisson-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../lp-shiro-jwt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../lp-spring-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../lp-springboot-gateway/lp-eureka" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../lp-springboot-gateway/lp-gateway" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../lp-springboot-gateway/lp-springboot-admin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../lp-springboot-gateway/lp-test-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../lp-springboot-jwt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../lp-springboot-quartz" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../lp-springboot-shiro" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../lp-springboot-spel" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

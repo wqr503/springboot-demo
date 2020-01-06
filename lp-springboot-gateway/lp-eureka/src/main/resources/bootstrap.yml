@@ -1,0 +1,31 @@
+user:
+  application:
+    shout-name: eureka
+
+server:
+  port: 8013
+
+spring:
+  application:
+    name: lp-cloud-${user.application.shout-name}
+  cloud:
+    config:
+      uri:
+        - ${CONFIG_SERVER:http://localhost:8014}
+      # 这里对应的是仓库中的目录
+      profile: dev
+      # 这里对应的是仓库中文件
+      name: ${spring.application.name}
+      fail-fast: true
+      # label: 2.0.x
+      retry:
+        initial-interval: 1000
+        max-attempts: 1000
+        max-interval: 2000
+        multiplier: 1.1
+  sleuth:
+    sampler:
+      probability: 1
+      #表示以 100% 的概率将链路的数据上传给 Zipkin Server ， 在默认情况下 ， 该值为0.1
+  zipkin:
+    base-url: http://localhost:9411/

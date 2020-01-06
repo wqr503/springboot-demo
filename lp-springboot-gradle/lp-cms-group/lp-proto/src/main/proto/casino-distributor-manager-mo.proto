@@ -1,0 +1,197 @@
+syntax = "proto3";
+
+import "common-mo.proto";
+
+option java_multiple_files = true;
+option java_package = "com.ly.zhp.biz.protocol.grpc.casinodistributormanager";
+option java_outer_classname = "CasinoDistributorManagerMOProto";
+
+/********************************/
+// 分销商创建对象
+message DistributorCreatorMO {
+
+    //名称
+    string name = 1;
+
+    //联系人
+    string contacts = 2;
+
+    //分成比例(10% 传 10)
+    int32 creditProp = 3;
+
+    //备注
+    StringMO description = 4;
+
+    string code = 5;
+
+}
+
+// 分销商编辑对象
+message DistributorEditingMO {
+
+    //名称
+    string name = 1;
+
+    //联系人
+    string contacts = 2;
+
+    //分成比例(10% 传 10)
+    int32 creditProp = 3;
+
+    //备注
+    StringMO description = 4;
+
+    int64 id = 5;
+
+}
+
+// 分销商搜索参数对象
+message DistributorSearchingMO {
+
+    //分销商名称
+    StringMO name = 1;
+
+    //分成比例(10% 传 10)
+    IntMO creditProp = 2;
+
+    PagingMO paging = 3;
+
+}
+
+// 分销商管理员对象
+message DistributorAdministratorMO {
+
+    string name = 1;
+
+    //
+    int64 userID = 2;
+
+    //分销商名称
+    string account = 3;
+}
+
+// 分销商充值对象
+message DistributorRechargeOrderMO {
+
+    //管理员
+    DistributorAdministratorMO operator = 1;
+
+    //分销商id
+    int64 distributorID = 2;
+
+    //金额
+    int64 amount = 3;
+
+    StringMO remark = 4;
+}
+
+// 分销商修改额度对象
+message DistributorCreditEditingMO {
+
+    //管理员
+    DistributorAdministratorMO operator = 1;
+
+    //分销商id
+    int64 distributorID = 2;
+
+    //额度
+    int64 credit = 3;
+
+    StringMO remark = 4;
+}
+
+// 分销商修改描述对象
+message DistributorDescriptionEditingMO {
+
+    //分销商id
+    int64 distributorID = 1;
+
+    //备注
+    StringMO description = 2;
+}
+
+//分销商
+message DistributorMO {
+
+    // id
+    int64 id = 1;
+    //名称
+    string name = 2;
+    //联系人
+    string contacts = 3;
+    //备注
+    StringMO description = 4;
+    //分成比例
+    int32 creditProp = 5;
+    //额度
+    int64 credit = 6;
+    //创建时间
+    int64 createTime = 7;
+    // 状态
+    int32 state = 8;
+    // 代码
+    string code = 9;
+    // 密钥id
+    int64 secretKeyID = 10;
+    // 密钥
+    string secretKey = 11;
+}
+
+//分销商分页对象
+message DistributorPageMO {
+
+    repeated DistributorMO distributor = 1;
+
+    PageInfoMO pageInfo = 2;
+}
+
+//分销商额度记录对象
+message DistributorCreditRecordMO {
+
+    int64 id = 1;
+    int64 distributorID = 2;
+    int32 creditAlterType = 3;
+    int64 oldAmount = 4;
+    int64 alterAmount = 5;
+    int64 amount = 6;
+    int32 creditProp = 7;
+    int64 oldCredit = 8;
+    int64 alterCredit = 9;
+    int64 credit = 10;
+    StringMO remark = 11;
+    int64 operatorID = 12;
+    string operatorAccount = 13;
+    string distributorName = 14;
+    int64 recordTime = 15;
+}
+
+//分销商额度记录分页对象
+message DistributorCreditRecordPageMO {
+
+    repeated DistributorCreditRecordMO record = 1;
+
+    PageInfoMO pageInfo = 2;
+}
+
+// 分销商搜索参数对象
+message DistributorCreditRecordSearchingMO {
+
+    LongMO recordId = 1;
+
+    StringMO distributorName = 2;
+
+    LongMO startTime = 3;
+
+    LongMO endTime = 4;
+
+    IntMO alterType = 5;
+
+    PagingMO paging = 6;
+}
+
+//分销商列表对象
+message DistributorListMO {
+    // 分销商列表
+    repeated DistributorMO distributor = 1;
+}
+

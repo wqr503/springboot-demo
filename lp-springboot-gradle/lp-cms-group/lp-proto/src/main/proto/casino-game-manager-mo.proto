@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+import "common-mo.proto";
+
+option java_multiple_files = true;
+option java_package = "com.ly.zhp.biz.protocol.grpc.casinogamemanager";
+option java_outer_classname = "CasinoGameManagerMOProto";
+
+// 娱乐城游戏维护对象
+message CasinoGameMO {
+    // id
+    int64 id = 1;
+    // 分类
+    int32 category = 2;
+    // 开始时间
+    int64 maintanenceStarTime = 5;
+    // 结束时间
+    int64 maintanenceEndTime = 6;
+    // 备注
+    string remark = 7;
+    //游戏名
+    string name = 8;
+    // 游戏状态
+    int32 gameState = 9;
+}
+
+// 游戏搜索
+message GameSearchingMO {
+    // 分页
+    PagingMO paging = 1;
+    // 分类
+    IntMO category = 2;
+    // 状态
+    IntMO maintanenceState = 4;
+
+}
+
+// 获得所有游戏结果
+message SearchGameResultMO {
+    // 分页信息
+    PageInfoMO pageInfo = 1;
+    // 游戏列表
+    repeated CasinoGameMO games = 2;
+}
+
+message UpdateMaintainTimeMO {
+    // 游戏ID
+    int64 id = 1;
+    // 时间
+    int64 time = 2;
+}
+
+message AddGameRemarkMO {
+    // 游戏ID
+    int64 id = 1;
+    //备注
+    string remark = 2;
+}

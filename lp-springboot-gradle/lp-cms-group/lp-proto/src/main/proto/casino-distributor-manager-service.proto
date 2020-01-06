@@ -1,0 +1,62 @@
+syntax = "proto3";
+
+import "common-mo.proto";
+import "casino-distributor-manager-mo.proto";
+
+option java_multiple_files = true;
+option java_package = "com.ly.zhp.biz.protocol.grpc.casinodistributormanager";
+option java_outer_classname = "CasinoDistributorManagerServiceProto";
+
+// 娱乐城分销商服务
+service Distributor {
+
+    // 获取分销商
+    rpc get (LongMO) returns (DistributorMO) {
+    }
+
+    // 添加分销商
+    rpc add (DistributorCreatorMO) returns (SimpleResultMO) {
+    }
+
+    // 编辑分销商
+    rpc edit (DistributorEditingMO) returns (SimpleResultMO) {
+    }
+
+    // 充值
+    rpc recharge (DistributorRechargeOrderMO) returns (SimpleResultMO) {
+    }
+
+    // 修改额度
+    rpc editCredit (DistributorCreditEditingMO) returns (SimpleResultMO) {
+    }
+
+    // 修改描述
+    rpc editDescription (DistributorDescriptionEditingMO) returns (SimpleResultMO) {
+    }
+
+    // 上线
+    rpc online (LongMO) returns (SimpleResultMO) {
+    }
+
+    // 下线
+    rpc offline (LongMO) returns (SimpleResultMO) {
+    }
+
+    // 获取分销商列表
+    rpc search (DistributorSearchingMO) returns (DistributorPageMO) {
+    }
+
+    // 获得所有分销
+    rpc getAll (NoneMO) returns (DistributorListMO) {
+    }
+
+}
+
+// 娱乐城分销商服务
+service DistributorCreditRecord {
+
+    // 添加分销商
+    rpc search (DistributorCreditRecordSearchingMO) returns (DistributorCreditRecordPageMO) {
+
+    }
+}

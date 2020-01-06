@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: lp-grpc-client
+  cloud:
+    sentinel:
+      transport:
+        #Sentinel 控制台地址
+        dashboard: localhost:8080
+      #取消Sentinel控制台懒加载
+      eager: true
+      #通过文件读取限流规则
+      datasource:
+        ds1:
+          file:
+            file: classpath:flowrule.json
+            data-type: json
+            rule-type: flow
+
+server:
+  port: 8015
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8013/eureka
+  instance:
+    prefer-ip-address: true
+
+grpc:
+  client:
+    GLOBAL:
+      enable-keep-alive: true
+      keep-alive-without-calls: true
+      negotiation-type: plaintext
+      keep-alive-timeout: 2s
+      keep-alive-time: 10s

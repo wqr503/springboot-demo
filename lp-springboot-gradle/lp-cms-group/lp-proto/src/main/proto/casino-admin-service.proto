@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+import "common-mo.proto";
+import "casino-mo.proto";
+
+option java_multiple_files = true;
+option java_package = "com.ly.zhp.biz.protocol.grpc.casino";
+option java_outer_classname = "CasinoAdminServiceProto";
+
+// 娱乐城管理后台用户服务
+service CasinoAdminUser {
+
+    // 重置管理后台密码
+    rpc resetHeadAdminUserPassword (NoneMO) returns (SimpleResultMO) {
+    }
+}
+
+

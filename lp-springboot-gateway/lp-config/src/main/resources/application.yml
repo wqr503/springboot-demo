@@ -1,0 +1,24 @@
+user:
+  application:
+    shout-name: config
+
+server:
+  port: 8014
+  tomcat:
+    uri-encoding: UTF-8
+
+spring:
+  application:
+    name: lp-cloud-${user.application.shout-name}
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: 'classpath:/config' #明确采用该目录下配置
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  profiles:
+    active: native

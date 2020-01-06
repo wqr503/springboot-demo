@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/../lp-google-token/pom.xml" />
+        <option value="$PROJECT_DIR$/../lp-mongo-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/../lp-redisson-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/../lp-scan/pom.xml" />
+        <option value="$PROJECT_DIR$/../lp-shiro-jwt/pom.xml" />
+        <option value="$PROJECT_DIR$/../lp-spring-web/pom.xml" />
+        <option value="$PROJECT_DIR$/../lp-springboot-gateway/lp-eureka/pom.xml" />
+        <option value="$PROJECT_DIR$/../lp-springboot-gateway/lp-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/../lp-springboot-gateway/lp-springboot-admin/pom.xml" />
+        <option value="$PROJECT_DIR$/../lp-springboot-gateway/lp-test-service/pom.xml" />
+        <option value="$PROJECT_DIR$/../lp-springboot-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/../lp-springboot-jpa/pom.xml" />
+        <option value="$PROJECT_DIR$/../lp-springboot-jwt/pom.xml" />
+        <option value="$PROJECT_DIR$/../lp-springboot-quartz/pom.xml" />
+        <option value="$PROJECT_DIR$/../lp-springboot-spel/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

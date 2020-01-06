@@ -1,0 +1,61 @@
+<script type="text/javascript"
+        src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript"
+        src="jquery.form.js"></script>
+<script>
+    $(function () {
+        var person = {firstname: "Bill", lastname: "Gates"};
+        var options = {
+            type: 'post',
+            url: "/testPostEntity",
+            data: JSON.stringify(person),//取得person对象的string
+            contentType: 'application/json',
+            success: function (result) {
+                alert(result.username);
+            }
+        };
+
+        $("#btnPostEntity").click(function () {
+            $.ajax(options);
+        });
+
+    });
+
+    function checkForm(formName) {
+        var obj = document.getElementById(formName);//DOM对象
+        var $obj = $(obj);//jquery对象
+        $obj.ajaxSubmit(function(message) {
+            // 对于表单提交成功后处理，message为表单正常提交后返回的内容
+            console.log(message);
+        });
+        return false; // 必须返回false，否则表单会自己再做一次提交操作，并且页面跳转
+    }
+
+</script>
+</head>
+<body>
+<input type="button" id="btnPostEntity" value="测试提交User"/>
+
+<form id='test_form' action='testPostForm' method='post' onsubmit="return checkForm('test_form')">
+    <input type='text' name='firstName' value=''/>
+    <input type='password' id='input_pwd' name='lastName' value=''/>
+    <input type='hidden' name='pwd' id='md5_pwd' value=''/>
+    <button type='submit'>提交</button>
+</form>
+
+<form id='test_file_form' action='testPostFileForm' method='post' enctype="multipart/form-data" onsubmit="return checkForm('test_file_form')">
+    <input type='text' name='firstName' value=''/>
+    <input type='password' name='lastName' value=''/>
+    <input type="file" multiple="multiple" name="uploadFile">
+    <button type='submit'>提交</button>
+</form>
+   
+<form id='test_muli_file_form' method="post" action="/multiUpload" enctype="multipart/form-data" onsubmit="return checkForm('test_muli_file_form')">
+    <input type="file" name="file"><br>
+    <input type="file" name="file"><br>
+    <input type="file" name="file"><br>
+    <input type="submit" value="提交">
+</form>
+
+</body>
+</html>

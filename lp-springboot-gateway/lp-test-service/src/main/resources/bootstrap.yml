@@ -1,0 +1,41 @@
+user:
+  application:
+    shout-name: test-service
+
+#logging:
+#  config: classpath:logback-spring.xml
+
+server:
+  port: ${SERVER_PORT:8016}
+  servlet:
+    context-path: /
+  tomcat:
+    uri-encoding: UTF-8
+
+spring:
+  application:
+    name: lp-${user.application.shout-name}
+  cloud:
+    config:
+      uri:
+        - ${CONFIG_SERVER:http://localhost:8014}
+      # 可简单理解为对应文件夹名
+      profile: dev
+      # 文件名
+      name: ${spring.application.name}
+      # 失败快速响应
+      fail-fast: true
+      #分支标签
+      #label: 2.0.x
+      #重试机制
+      retry:
+        initial-interval: 1000
+        max-attempts: ${CONFIG_MAX_ATTEMPTS:1000}
+        max-interval: 2000
+        multiplier: 1.1
+  sleuth:
+    sampler:
+      probability: 1
+      #表示以 100% 的概率将链路的数据上传给 Zipkin Server ， 在默认情况下 ， 该值为0.1
+  zipkin:
+    base-url: http://localhost:9411/

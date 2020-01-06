@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="lp-gateway" />
+        <module name="lp-test-service" />
+        <module name="lp-mongo-demo" />
+        <module name="lp-springboot-jwt" />
+        <module name="lp-springboot-admin" />
+        <module name="lp-redisson-demo" />
+        <module name="lp-scan" />
+        <module name="lp-springboot-quartz" />
+        <module name="lp-spring-web" />
+        <module name="lp-springboot-spel" />
+        <module name="lp-springboot-jpa" />
+        <module name="lp-shiro-jwt" />
+        <module name="lp-elasticsearch-demo" />
+        <module name="lp-google-token" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="lp-db-separate" target="1.8" />
+      <module name="lp-eureka" target="11" />
+      <module name="lp-eureka (1)" target="1.8" />
+      <module name="lp-eureka (2)" target="1.8" />
+      <module name="lp-eureka-grpc" target="1.5" />
+      <module name="lp-freemark" target="11" />
+      <module name="lp-gateway (1)" target="11" />
+      <module name="lp-gateway (2)" target="11" />
+      <module name="lp-google-token (1)" target="1.5" />
+      <module name="lp-google-token (2)" target="1.8" />
+      <module name="lp-grpc-client" target="11" />
+      <module name="lp-grpc-common" target="11" />
+      <module name="lp-grpc-server" target="11" />
+      <module name="lp-mongo-demo (1)" target="11" />
+      <module name="lp-mongo-demo (2)" target="11" />
+      <module name="lp-redisson-demo (1)" target="1.8" />
+      <module name="lp-redisson-demo (2)" target="1.8" />
+      <module name="lp-scan (1)" target="1.5" />
+      <module name="lp-scan (2)" target="1.8" />
+      <module name="lp-shiro-jwt (1)" target="1.8" />
+      <module name="lp-shiro-jwt (2)" target="1.8" />
+      <module name="lp-spring-web (1)" target="1.8" />
+      <module name="lp-spring-web (2)" target="1.8" />
+      <module name="lp-springboot-admin (1)" target="11" />
+      <module name="lp-springboot-admin (2)" target="11" />
+      <module name="lp-springboot-gateway (1)" target="1.5" />
+      <module name="lp-springboot-gateway (2)" target="1.5" />
+      <module name="lp-springboot-jpa (1)" target="11" />
+      <module name="lp-springboot-jpa (2)" target="11" />
+      <module name="lp-springboot-jwt (1)" target="1.5" />
+      <module name="lp-springboot-jwt (2)" target="1.8" />
+      <module name="lp-springboot-quartz (1)" target="1.8" />
+      <module name="lp-springboot-quartz (2)" target="1.8" />
+      <module name="lp-springboot-shiro" target="1.8" />
+      <module name="lp-springboot-spel (1)" target="1.8" />
+      <module name="lp-springboot-spel (2)" target="1.8" />
+      <module name="lp-test-service (1)" target="11" />
+      <module name="lp-test-service (2)" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="lp-db-separate" options="-parameters" />
+      <module name="lp-elasticsearch-demo" options="-parameters" />
+      <module name="lp-eureka" options="-parameters" />
+      <module name="lp-eureka (1)" options="-parameters" />
+      <module name="lp-eureka (2)" options="-parameters" />
+      <module name="lp-gateway" options="-parameters" />
+      <module name="lp-gateway (1)" options="-parameters" />
+      <module name="lp-gateway (2)" options="-parameters" />
+      <module name="lp-grpc-client" options="-parameters" />
+      <module name="lp-grpc-common" options="-parameters" />
+      <module name="lp-grpc-server" options="-parameters" />
+      <module name="lp-mongo-demo" options="-parameters" />
+      <module name="lp-mongo-demo (2)" options="-parameters" />
+      <module name="lp-redisson-demo" options="-parameters" />
+      <module name="lp-redisson-demo (2)" options="-parameters" />
+      <module name="lp-shiro-jwt" options="-parameters" />
+      <module name="lp-shiro-jwt (2)" options="-parameters" />
+      <module name="lp-spring-web" options="-parameters" />
+      <module name="lp-spring-web (1)" options="-parameters" />
+      <module name="lp-spring-web (2)" options="-parameters" />
+      <module name="lp-springboot-admin" options="-parameters" />
+      <module name="lp-springboot-admin (1)" options="-parameters" />
+      <module name="lp-springboot-admin (2)" options="-parameters" />
+      <module name="lp-springboot-quartz" options="-parameters" />
+      <module name="lp-springboot-quartz (1)" options="-parameters" />
+      <module name="lp-springboot-quartz (2)" options="-parameters" />
+      <module name="lp-springboot-shiro" options="-parameters" />
+      <module name="lp-springboot-spel" options="-parameters" />
+      <module name="lp-springboot-spel (1)" options="-parameters" />
+      <module name="lp-springboot-spel (2)" options="-parameters" />
+      <module name="lp-test-service" options="-parameters" />
+      <module name="lp-test-service (2)" options="-parameters" />
+    </option>
+  </component>
+</project>

@@ -1,0 +1,26 @@
+user:
+  application:
+    shout-name: lp-springboot-quartz
+
+spring:
+  application:
+    name: wqr-${user.application.shout-name}
+  profiles:
+    active: company
+  datasource:
+    platform: mysql
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:13306/wqr?serverTimezone=GMT
+    username: root
+    password: 123456
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+  jpa:
+    database: MYSQL
+    show-sql: true
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect

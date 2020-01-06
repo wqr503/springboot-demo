@@ -1,0 +1,13 @@
+#本地
+version: '3.1'
+services:
+
+  service:
+    image: registry.cn-hongkong.aliyuncs.com/julebuluo/lp.spring.web:v1
+    restart: always
+    ports: 
+      - "8020:8020"
+
+  
+
+    

@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+import "common-mo.proto";
+
+option java_multiple_files = true;
+option java_package = "com.ly.zhp.biz.protocol.grpc.casinonoticemanager";
+option java_outer_classname = "CasinoNoticeManagerMOProto";
+
+message CasinoNoticeMO {
+
+    // id
+    int64 id = 1;
+    // 标题
+    string title = 2;
+    // 内容
+    string content = 3;
+    // 开始时间
+    int64 startTime = 4;
+    // 结束时间
+    int64 endTime = 5;
+    // 游戏分类
+    int32 gameCategory = 8;
+    // 发布时间
+    int64 createTime = 9;
+    // 游戏名字
+    string gameName = 10;
+    // 游戏ID
+    int64 gameID = 11;
+
+}
+
+// 获得所有公告结果
+message SearchNoticeResultMO {
+    // 公告列表
+    repeated CasinoNoticeMO notice = 1;
+    // 分页信息
+    PageInfoMO pageInfo = 2;
+}
+
+// 公告搜索对象
+message NoticeSearchingMO {
+
+    // 分页
+    PagingMO paging = 1;
+    // 开始时间
+    LongMO starTime = 4;
+    // 结束时间
+    LongMO endTime = 5;
+    // 游戏分类
+    IntMO gameCategory = 6;
+
+}

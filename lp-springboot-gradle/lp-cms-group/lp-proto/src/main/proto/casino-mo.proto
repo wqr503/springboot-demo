@@ -1,0 +1,188 @@
+syntax = "proto3";
+
+import "common-mo.proto";
+
+option java_multiple_files = true;
+option java_package = "com.ly.zhp.biz.protocol.grpc.casino";
+option java_outer_classname = "CasinoMOProto";
+
+//////////////////////////////////////////////////////////
+
+// 信息表格字段数据
+message InfoFormFieldDataMO {
+    // 字段类型
+    int32 fieldType = 1;
+    // 值
+    string value = 2;
+}
+
+// 注册参数
+message UserRegisterMO {
+    // 账号
+    string account = 1;
+    // 密码
+    string password = 2;
+    // 表格字段内容
+    repeated InfoFormFieldDataMO fields = 3;
+}
+
+// 信息表格内容项配置
+message InfoFormFieldConfigMO {
+
+    // id
+    int64 id = 1;
+
+    // 信息类型, 1:取款密码 2:介绍人 3:真实姓名 4:手机号 5:微信 6:qq号 7:邮箱 8:银行账号 9:开户行网点 10:开户银行 11:生日 12:身份证号 13:昵称 14:网站推广方式 15:其他推广方式
+    int32 fieldType = 2;
+
+    // 是否显示，true:显示
+    bool display = 3;
+
+    // 是否必填，true:必填
+    bool required = 4;
+
+    // 是否需要校验，true:需要
+    bool needVerify = 5;
+
+    // 是否可校验，true:可以校验的（true时needVerify才又效）
+    bool verifiable = 6;
+
+}
+
+// 表格配置
+message InfoFormConfigMO {
+
+    // 表单类型
+    int32 formType = 1;
+
+    // 字段配置列表
+    repeated InfoFormFieldConfigMO fields = 2;
+
+}
+
+// 表格类型
+message InfoFormTypeMO {
+
+    // 表单类型
+    int32 formType = 1;
+
+}
+
+//用户代理信息
+message CasinoUserAgencyInfoMO {
+    //用户id
+    int64 userID = 1;
+
+    //账号
+    string account = 2;
+
+    //姓名
+    string name = 3;
+
+    //上级代理ID
+    int64 directAgentID = 4;
+
+    //上级代理名称
+    string directAgent = 5;
+
+    //总代理ID
+    int64 headAgentID = 6;
+
+    //总代理名称
+    string headAgent = 7;
+
+    //账号状态
+    int32 userState = 8;
+
+    //账号注册时间
+    int64 registerTime = 9;
+
+    //最后登录时间
+    int64 lastLoginTime = 10;
+}
+
+message CasinoAgentUserPageMO {
+    repeated CasinoUserAgencyInfoMO user = 1;
+    PageInfoMO pageInfo = 2;
+}
+
+//用户推广信息
+message CasinoAgentPromotionMO {
+    //用户id
+    int64 userID = 1;
+
+    //账号
+    string account = 2;
+
+    //姓名
+    string name = 3;
+
+    //上级代理ID
+    int64 directAgentID = 4;
+
+    //上级代理名称
+    string directAgent = 5;
+
+    //账号状态
+    int32 userState = 6;
+
+    //账号注册时间
+    int64 registerTime = 7;
+
+    //会员人数
+    int32 userNum = 8;
+
+    //直属会员人数
+    int32 directUserNum = 9;
+
+    //代理人数
+    int32 agentNum = 10;
+
+    //直属代理人数
+    int32 directAgentNum = 11;
+}
+
+//推广信息
+message CasinoPromotionMO {
+
+    //会员人数
+    int32 userNum = 1;
+
+    //直属会员人数
+    int32 directUserNum = 2;
+
+    //代理人数
+    int32 agentNum = 3;
+
+    //直属代理人数
+    int32 directAgentNum = 4;
+
+    int64 usedCredit = 5;
+
+}
+
+message CasinoAgentPromotionPageMO {
+    repeated CasinoAgentPromotionMO promotion = 1;
+    PageInfoMO pageInfo = 2;
+}
+
+// 代理用户推广信息搜索
+message CasinoLowerAgentPromotionSearchingMO {
+
+    //代理id
+    int64 agentID = 1;
+
+    PagingMO paging = 2;
+}
+
+
+// 代理直属用户搜索
+message CasinoAgentUserSearchingMO {
+
+    //代理id
+    int64 agentID = 1;
+
+    PagingMO paging = 2;
+
+    int32 userType = 3;
+}

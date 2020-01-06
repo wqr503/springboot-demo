@@ -1,0 +1,7 @@
+rootProject.name = 'lp-springboot-gradle'
+
+include ':lp-cms-group'
+include ':lp-cms-group:lp-service-one'
+include ':lp-cms-group:lp-proto'
+include ':lp-cms-group:lp-dialog'
+

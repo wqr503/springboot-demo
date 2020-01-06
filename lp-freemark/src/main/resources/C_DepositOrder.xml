@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table>
+  <config>
+    <mvl>/test/test.ftl</mvl>
+    <output>/../C_DepositOrderDTO.java</output>
+  </config>
+  <attributeMap>
+    <vo superClassName="Object" className="C_DepositOrder" des="" packageName="com.cn.lp">
+      <fieldList class="list">
+        <field className="String" fieldName="agentAccount" des="代理账号" fieldID="0" collection="false" nullable="false" collectionBaseClass="false"/>
+        <field className="Boolean" fieldName="firstDeposit" des="首冲" fieldID="0" collection="false" nullable="false" collectionBaseClass="false"/>
+        <field className="Long" fieldName="depositDiscountMoney" des="存款优惠金额" fieldID="0" collection="false" nullable="false" collectionBaseClass="false"/>
+        <field className="Long" fieldName="depositMoney" des="存款金额" fieldID="0" collection="false" nullable="false" collectionBaseClass="false"/>
+        <field className="Integer" fieldName="userDepositWay" des="会员存款方式" fieldID="0" collection="false" nullable="true" collectionBaseClass="false"/>
+        <field className="Long" fieldName="operateTime" des="操作时间" fieldID="0" collection="false" nullable="true" collectionBaseClass="false"/>
+        <field className="Long" fieldName="actualDepositMoney" des="实际存款金额" fieldID="0" collection="false" nullable="false" collectionBaseClass="false"/>
+        <field className="String" fieldName="equipment" des="设备" fieldID="0" collection="false" nullable="false" collectionBaseClass="false"/>
+        <field className="String" fieldName="remark" des="备注" fieldID="0" collection="false" nullable="false" collectionBaseClass="false"/>
+        <field className="Long" fieldName="otherDiscountMoney" des="其他优惠金额" fieldID="0" collection="false" nullable="false" collectionBaseClass="false"/>
+        <field className="Integer" fieldName="userBankType" des="会员银行类型" fieldID="0" collection="false" nullable="true" collectionBaseClass="false"/>
+        <field className="String" fieldName="companyPaymentBank" des="公司收款开户行" fieldID="0" collection="false" nullable="true" collectionBaseClass="false"/>
+        <field className="Long" fieldName="depositTime" des="会员存款时间" fieldID="0" collection="false" nullable="true" collectionBaseClass="false"/>
+        <field className="String" fieldName="operatorName" des="操作者名字" fieldID="0" collection="false" nullable="true" collectionBaseClass="false"/>
+        <field className="Integer" fieldName="orderState" des="订单状态" fieldID="0" collection="false" nullable="false" collectionBaseClass="false"/>
+        <field className="Integer" fieldName="companyBankType" des="公司银行类型" fieldID="0" collection="false" nullable="false" collectionBaseClass="false"/>
+        <field className="Long" fieldName="createTime" des="创建时间" fieldID="0" collection="false" nullable="false" collectionBaseClass="false"/>
+        <field className="String" fieldName="companyPaymentAccount" des="公司收款账号" fieldID="0" collection="false" nullable="false" collectionBaseClass="false"/>
+        <field className="String" fieldName="userAccount" des="会员账号" fieldID="0" collection="false" nullable="true" collectionBaseClass="false"/>
+        <field className="String" fieldName="depositRemark" des="存款备注" fieldID="0" collection="false" nullable="true" collectionBaseClass="false"/>
+        <field className="Long" fieldName="id" des="id" fieldID="0" collection="false" nullable="false" collectionBaseClass="false"/>
+        <field className="String" fieldName="layerName" des="存款备注" fieldID="0" collection="false" nullable="false" collectionBaseClass="false"/>
+        <field className="String" fieldName="companyPaymentName" des="公司收款户名" fieldID="0" collection="false" nullable="false" collectionBaseClass="false"/>
+        <field className="String" fieldName="userBankAccountName" des="会员银行户名" fieldID="0" collection="false" nullable="true" collectionBaseClass="false"/>
+      </fieldList>
+    </vo>
+  </attributeMap>
+</table>

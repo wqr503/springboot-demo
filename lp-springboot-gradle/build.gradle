@@ -1,0 +1,95 @@
+apply from: "config.gradle"
+
+group = 'wqr'
+version = '0.0.1-SNAPSHOT'
+
+//allprojects里是项目本身需要的依赖，比如我现在要依赖我自己maven库的toastutils库
+allprojects {
+
+    //如果要让Gradle自动生成Intellij的项目文件
+    apply plugin: "idea"
+
+    // 定义仓库
+    repositories {
+        mavenLocal()        //使用本地仓库
+        maven {
+            url mavenURL
+        }
+        mavenCentral()
+    }
+
+    //添加 utf-8 的支持，避免中文注释生成 Javadoc 文件出现编码错误
+    tasks.withType(JavaCompile) {
+        options.encoding = "UTF-8"
+    }
+
+    // 自定义task任务，遍历子项目，打印子项目信息
+    tasks.create('printProjectInfo') {
+        doLast {
+            task ->
+                println "project name is $task.project.name, version = $task.project.version, group = $task.project.group "
+        }
+    }
+
+}
+
+def noJavaProjectNames = [
+        'lp-cms-group'
+]
+
+// subProjects 和 allProjects 一样，只是subProjects 定义的是子项目，配置在本项目不会生效，
+// allProject 是子项目和本项目都会生效
+subprojects {
+
+    //buildscript里是gradle脚本执行所需依赖，分别是对应的maven库和插件
+    buildscript {
+
+        // 定义gradle 依赖的仓库
+        repositories {
+            mavenLocal()
+            maven { url mavenURL }
+            mavenCentral()
+            maven {
+                url "https://plugins.gradle.org/m2/"
+            }
+        }
+
+        //gradle 依赖的插件
+        dependencies {
+            // springboot 插件
+            classpath "org.springframework.boot:spring-boot-gradle-plugin:${vers.springBoot}"
+            // gradle 工具插件
+            classpath "gradle.plugin.com.github.viswaramamoorthy:gradle-util-plugins:0.1.0-RELEASE"
+            //缩短命令行长度
+            classpath "gradle.plugin.ua.eshepelyuk:ManifestClasspath:1.0.0"
+        }
+
+    }
+
+    // 排除组项目，因为组项目不是标准java项目
+    if (!noJavaProjectNames.contains(project.name)) {
+
+        apply plugin: "java" // 使用java插件构建标准java工程
+        apply plugin: "maven" // 使用maven 仓库
+        apply plugin: 'groovy'//使用 groovy 插件构建项目
+
+        //设置jdk的版本
+        sourceCompatibility = vers.jdk
+        targetCompatibility = vers.jdk
+    }
+
+}
+
+// idea的配置
+idea {
+
+    module {
+        // 是否下载源码
+        downloadSources = true
+    }
+    project {
+        jdkName = vers.jdk
+        languageLevel = vers.jdk
+    }
+
+}

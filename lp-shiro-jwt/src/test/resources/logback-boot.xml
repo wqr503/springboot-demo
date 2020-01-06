@@ -1,0 +1,21 @@
+<configuration>
+    <!-- %m输出的信息, %p日志级别, %t线程名, %d日期, %c类的全名, %i索引 -->
+    <!-- appender是configuration的子节点,是负责写日志的组件 -->
+    <!-- ConsoleAppender把日志输出到控制台 -->
+    <!--    <property name="CONSOLE_LOG_PATTERN" -->
+    <!--               value="%date{yyyy-MM-dd HH:mm:ss} | %highlight(%-5level) | %boldYellow(%thread) | %boldGreen(%logger) | %msg%n"/> -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!--<pattern>${CONSOLE_LOG_PATTERN}</pattern> -->
+            <pattern>%date{yyyy-MM-dd HH:mm:ss} %highlight(%-5level) (%file:%line\)- %m%n</pattern>
+            <!-- 控制台也要使用utf-8，不要使用gbk -->
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <!-- 控制台日志输出级别 -->
+    <root level="info">
+        <appender-ref ref="STDOUT" />
+    </root>
+
+</configuration>

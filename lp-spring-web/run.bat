@@ -1,0 +1,1 @@
+java -jar -Dloader.path=./target/lib  ./target/lp-spring-web.jar
